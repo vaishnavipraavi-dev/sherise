@@ -23,6 +23,7 @@ import {
 import productImage from "@/assets/p2.png";
 import productSetImage from "@/assets/p1.png";
 import pouchImage from "@/assets/p3.png";
+const slowMorningImage = "https://i.pinimg.com/1200x/ba/fa/db/bafadb9cf9a0942c8fb4e6464f3df854.jpg";
 import { articles, cartAmount, createOrderId, ecommerceConfig, formatMoney, product, productById, products } from "@/data/site";
 import { ButtonLink, EmptyBag, ProductVisual, QuantityAdd, QuantityStepper, productImageFor, useStore } from "./store";
 
@@ -41,7 +42,7 @@ export function HomePage() {
     <Benefits />
     <PurposeSection />
     <section className="statement"><div><p className="eyebrow">SHERISE</p><h2>Made for your period.<br /><em>Designed for your confidence.</em></h2><p>SheRise brings thoughtful period care into everyday life with a focus on comfort, confidence and ease.</p><ButtonLink to="/shop">SHOP SHERISE</ButtonLink></div><ProductVisual compact variant="pouch" /></section>
-    <section className="editorial section"><div className="editorial-art art-rest"><span>slow mornings</span></div><div className="editorial-copy"><p className="eyebrow">YOUR DAY, YOUR RHYTHM</p><h2>Comfort for every version of you.</h2><p>From quiet mornings to days that do not slow down, SheRise is designed around real routines and everyday confidence.</p><ul><li><Check /> Soft, considered period care</li><li><Check /> Designed to move with your day</li><li><Check /> A simple essential, without the noise</li></ul></div></section>
+    <section className="editorial section"><div className="editorial-art art-rest"><img src={slowMorningImage} alt="Slow morning comfort" /><span>slow mornings</span></div><div className="editorial-copy"><p className="eyebrow">YOUR DAY, YOUR RHYTHM</p><h2>Comfort for every version of you.</h2><p>From quiet mornings to days that do not slow down, SheRise is designed around real routines and everyday confidence.</p><ul><li><Check /> Soft, considered period care</li><li><Check /> Designed to move with your day</li><li><Check /> A simple essential, without the noise</li></ul></div></section>
     <Steps />
     <Education />
   </>;
@@ -267,6 +268,7 @@ export function ErrorStatePage({ type = "404" }: { type?: string }) {
 export function PageHero({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
   return <section className="page-hero"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p>{copy}</p></section>;
 }
+
 
 
 
