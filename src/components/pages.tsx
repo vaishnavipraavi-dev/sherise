@@ -79,7 +79,7 @@ export function Education() {
 
 export function ShopPage() {
   const { toggleWishlist, isWishlisted, buyNow } = useStore();
-  return <><PageHero eyebrow="SHOP SHERISE" title="Period Care, Made for You." copy="Choose from the current SheRise product formats shown in the supplied package assets." /><section className="section"><div className="shop-tools"><span>{products.length} products</span><label>Sort by <select><option>Featured</option><option>Newest</option></select></label></div><div className="product-grid">{products.map((item) => <article className="product-card" key={item.id}><Link to="/product/sherise-sanitary-pads"><div className="product-card-image"><img src={productImageFor(item.id)} alt={item.name} /></div></Link><button className={`heart-btn ${isWishlisted(item.id) ? "active" : ""}`} aria-label="Add to wishlist" onClick={() => toggleWishlist(item.id)}><Heart /></button><p className="eyebrow">{item.id === product.id ? "COMFORT PICK" : "SHERISE"}</p><Link to="/product/sherise-sanitary-pads"><h2>{item.name}</h2></Link><p>{item.variant}</p><Rating /><strong>{formatMoney(item.price)} <small>MRP {formatMoney(item.mrp)}</small></strong><QuantityAdd productId={item.id} /><button className="btn-secondary wide" onClick={() => buyNow(1, item.id)}>BUY NOW</button><ButtonLink to="/product/sherise-sanitary-pads" pale>QUICK VIEW</ButtonLink></article>)}</div></section></>;
+  return <><PageHero eyebrow="SHOP SHERISE" title="Period Care, Made for You." copy="Choose from the current SheRise product formats shown in the supplied package assets." /><section className="section shop-section"><div className="shop-tools"><span>{products.length} products</span><label>Sort by <select><option>Featured</option><option>Newest</option></select></label></div><div className="product-grid">{products.map((item) => <article className="product-card" key={item.id}><Link to="/product/sherise-sanitary-pads"><div className="product-card-image"><img src={productImageFor(item.id)} alt={item.name} /></div></Link><button className={`heart-btn ${isWishlisted(item.id) ? "active" : ""}`} aria-label="Add to wishlist" onClick={() => toggleWishlist(item.id)}><Heart /></button><p className="eyebrow">{item.id === product.id ? "COMFORT PICK" : "SHERISE"}</p><Link to="/product/sherise-sanitary-pads"><h2>{item.name}</h2></Link><p>{item.variant}</p><Rating /><strong>{formatMoney(item.price)} <small>MRP {formatMoney(item.mrp)}</small></strong><QuantityAdd productId={item.id} /><button className="btn-secondary wide" onClick={() => buyNow(1, item.id)}>BUY NOW</button><ButtonLink to="/product/sherise-sanitary-pads" pale>QUICK VIEW</ButtonLink></article>)}</div></section></>;
 }
 
 export function ProductPage() {
@@ -268,6 +268,7 @@ export function ErrorStatePage({ type = "404" }: { type?: string }) {
 export function PageHero({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
   return <section className="page-hero"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p>{copy}</p></section>;
 }
+
 
 
 

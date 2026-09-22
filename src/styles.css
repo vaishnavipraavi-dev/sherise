@@ -233,3 +233,6 @@ footer{background:linear-gradient(135deg,var(--accent),#1e2b74)}
 .article-art img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .article-art.feature{height:min(560px,62vw);background:#fff}
 .article-art.feature img{object-fit:contain;background:#fff}
+
+.shop-section{padding-top:48px}
+@media(max-width:700px){.shop-section{padding-top:34px}.page-hero{padding-bottom:42px}}
