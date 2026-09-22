@@ -57,6 +57,7 @@ export function Benefits() {
 }
 
 export function PurposeSection() {
+  const craftedForWomenImage = "https://i.pinimg.com/736x/09/f9/49/09f9498aa9df38b209a5a6ec3fcbafb6.jpg";
   const data = [
     [Heart, "Crafted for women", "Comfort-focused period care made for everyday confidence.", craftedForWomenImage, "purpose-women"],
     [Feather, "Kind to skin", "Soft essentials designed to feel gentle through busy days and restful nights.", productImageFor("sherise-sanitary-pads"), "purpose-skin"],
@@ -264,4 +265,5 @@ export function ErrorStatePage({ type = "404" }: { type?: string }) {
 export function PageHero({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
   return <section className="page-hero"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p>{copy}</p></section>;
 }
+
 
