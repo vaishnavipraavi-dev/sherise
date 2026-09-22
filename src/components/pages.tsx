@@ -58,7 +58,7 @@ export function Benefits() {
 
 export function PurposeSection() {
   const data = [
-    [Heart, "Crafted for women", "Comfort-focused period care made for everyday confidence.", productImageFor("sherise-premium-multi-pack"), "purpose-women"],
+    [Heart, "Crafted for women", "Comfort-focused period care made for everyday confidence.", craftedForWomenImage, "purpose-women"],
     [Feather, "Kind to skin", "Soft essentials designed to feel gentle through busy days and restful nights.", productImageFor("sherise-sanitary-pads"), "purpose-skin"],
     [Leaf, "Kind to planet", "Thoughtful care with a cleaner, calmer visual story for modern routines.", productImageFor("sherise-single-pack"), "purpose-planet"],
   ] as const;
@@ -264,3 +264,4 @@ export function ErrorStatePage({ type = "404" }: { type?: string }) {
 export function PageHero({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
   return <section className="page-hero"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p>{copy}</p></section>;
 }
+
