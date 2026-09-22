@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ContactPage } from "@/components/pages";
+export const Route = createFileRoute("/contact")({ head:()=>({meta:[{title:"Contact SheRise | We’d Love to Hear From You"},{name:"description",content:"Contact SheRise with product, ordering, partnership or period-care questions."},{property:"og:title",content:"Contact SheRise | We’d Love to Hear From You"},{property:"og:description",content:"Contact SheRise with product, ordering, partnership or period-care questions."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/contact"}]}), component:ContactPage });

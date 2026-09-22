@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { WhyPage } from "@/components/pages";
+export const Route = createFileRoute("/why-sherise")({ head:()=>({meta:[{title:"Why SheRise | Period Care Designed Around You"},{name:"description",content:"Discover the comfort-led, positive and women-first thinking behind SheRise period care."},{property:"og:title",content:"Why SheRise | Period Care Designed Around You"},{property:"og:description",content:"Discover the comfort-led, positive and women-first thinking behind SheRise period care."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/why-sherise"}]}), component:WhyPage });

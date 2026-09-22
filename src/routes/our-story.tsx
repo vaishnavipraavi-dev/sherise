@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { StoryPage } from "@/components/pages";
+export const Route = createFileRoute("/our-story")({ head:()=>({meta:[{title:"Our Story | Release, Renew & Rise"},{name:"description",content:"Read the editable founding story, mission, vision and values behind SheRise."},{property:"og:title",content:"Our Story | Release, Renew & Rise"},{property:"og:description",content:"Read the editable founding story, mission, vision and values behind SheRise."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/our-story"}]}), component:StoryPage });

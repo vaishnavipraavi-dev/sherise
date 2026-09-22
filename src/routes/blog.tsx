@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { BlogPage } from "@/components/pages";
+export const Route = createFileRoute("/blog")({ head:()=>({meta:[{title:"The Period Edit | SheRise Blog"},{name:"description",content:"Read simple, stigma-free articles about periods, wellness and self-care."},{property:"og:title",content:"The Period Edit | SheRise Blog"},{property:"og:description",content:"Read simple, stigma-free articles about periods, wellness and self-care."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/blog"}]}), component:BlogPage });

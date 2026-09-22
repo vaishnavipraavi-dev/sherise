@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { GuidePage } from "@/components/pages";
+export const Route = createFileRoute("/period-guide")({ head:()=>({meta:[{title:"Period Guide | Clear, Practical Period Care"},{name:"description",content:"Explore clear educational guidance on flow, pad sizes, hygiene, changing and disposal."},{property:"og:title",content:"Period Guide | Clear, Practical Period Care"},{property:"og:description",content:"Explore clear educational guidance on flow, pad sizes, hygiene, changing and disposal."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/period-guide"}]}), component:GuidePage });
