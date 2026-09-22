@@ -91,9 +91,9 @@ export const product = products[0];
 export const productById = (id: string) => products.find((item) => item.id === id) ?? product;
 
 export const articles = [
-  { slug: "understanding-your-menstrual-cycle", category: "Period Care", title: "Understanding Your Menstrual Cycle", excerpt: "A simple, stigma-free guide to the phases of your cycle and what may change along the way." },
-  { slug: "period-hygiene-simple-habits", category: "Wellness", title: "Period Hygiene: Simple Habits That Matter", excerpt: "Practical routines for feeling fresh, comfortable and prepared during your period." },
-  { slug: "choosing-the-right-pad", category: "Period Care", title: "Choosing the Right Pad for Your Flow", excerpt: "A straightforward look at pad length, flow and finding what feels right for your day." },
+  { slug: "understanding-your-menstrual-cycle", category: "Period Care", title: "Understanding Your Menstrual Cycle", excerpt: "A simple, stigma-free guide to the phases of your cycle and what may change along the way.", image: "https://i.pinimg.com/1200x/1c/91/f8/1c91f8941e31cd6a8afe95469f71bc37.jpg" },
+  { slug: "period-hygiene-simple-habits", category: "Wellness", title: "Period Hygiene: Simple Habits That Matter", excerpt: "Practical routines for feeling fresh, comfortable and prepared during your period.", image: "https://i.pinimg.com/1200x/3b/7d/ee/3b7dee5d51f0ba637597dfe06981eab7.jpg" },
+  { slug: "choosing-the-right-pad", category: "Period Care", title: "Choosing the Right Pad for Your Flow", excerpt: "A straightforward look at pad length, flow and finding what feels right for your day.", image: "https://i.pinimg.com/1200x/b8/5a/8f/b85a8fac3d5807f75a9131f507e84172.jpg" },
 ];
 
 export const nav = [
@@ -131,3 +131,4 @@ export function cartAmount(items: { productId: string; quantity: number }[]) {
 export function createOrderId() {
   return `SR${Date.now().toString().slice(-8)}`;
 }
+

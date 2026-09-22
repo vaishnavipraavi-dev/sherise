@@ -74,7 +74,7 @@ export function Steps() {
 }
 
 export function Education() {
-  return <section className="education section"><div className="section-heading split"><div><p className="eyebrow">THE PERIOD EDIT</p><h2>Let's Talk Periods</h2></div><ButtonLink to="/period-guide" pale>EXPLORE THE GUIDE</ButtonLink></div><div className="article-grid">{articles.map((article, index) => <Link to="/blog/$slug" params={{ slug: article.slug }} className="article-card" key={article.slug}><div className={`article-art article-${index}`}><Droplets /></div><p className="eyebrow">{article.category}</p><h3>{article.title}</h3><p>{article.excerpt}</p><span>READ MORE <ArrowRight /></span></Link>)}</div></section>;
+  return <section className="education section"><div className="section-heading split"><div><p className="eyebrow">THE PERIOD EDIT</p><h2>Let's Talk Periods</h2></div><ButtonLink to="/period-guide" pale>EXPLORE THE GUIDE</ButtonLink></div><div className="article-grid">{articles.map((article, index) => <Link to="/blog/$slug" params={{ slug: article.slug }} className="article-card" key={article.slug}><div className={`article-art article-${index}`}><img src={article.image} alt={article.title} /></div><p className="eyebrow">{article.category}</p><h3>{article.title}</h3><p>{article.excerpt}</p><span>READ MORE <ArrowRight /></span></Link>)}</div></section>;
 }
 
 export function ShopPage() {
@@ -233,13 +233,13 @@ export function BlogPage() {
   const [query, setQuery] = useState("");
   const [cat, setCat] = useState("All");
   const shown = useMemo(() => articles.filter((article) => (cat === "All" || article.category === cat) && article.title.toLowerCase().includes(query.toLowerCase())), [cat, query]);
-  return <><PageHero eyebrow="THE PERIOD EDIT" title="Good information, without the awkwardness." copy="Simple reads about periods, wellness, self-care and everyday life." /><section className="blog-controls section"><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search articles" aria-label="Search articles" /><div>{["All", "Period Care", "Wellness", "Self-Care", "Lifestyle"].map((x) => <button className={cat === x ? "active" : ""} onClick={() => setCat(x)} key={x}>{x}</button>)}</div></section><section className="article-grid section">{shown.map((article, index) => <Link to="/blog/$slug" params={{ slug: article.slug }} className="article-card" key={article.slug}><div className={`article-art article-${index}`}><Droplets /></div><p className="eyebrow">{article.category}</p><h2>{article.title}</h2><p>{article.excerpt}</p><span>READ ARTICLE <ArrowRight /></span></Link>)}</section></>;
+  return <><PageHero eyebrow="THE PERIOD EDIT" title="Good information, without the awkwardness." copy="Simple reads about periods, wellness, self-care and everyday life." /><section className="blog-controls section"><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search articles" aria-label="Search articles" /><div>{["All", "Period Care", "Wellness", "Self-Care", "Lifestyle"].map((x) => <button className={cat === x ? "active" : ""} onClick={() => setCat(x)} key={x}>{x}</button>)}</div></section><section className="article-grid section">{shown.map((article, index) => <Link to="/blog/$slug" params={{ slug: article.slug }} className="article-card" key={article.slug}><div className={`article-art article-${index}`}><img src={article.image} alt={article.title} /></div><p className="eyebrow">{article.category}</p><h2>{article.title}</h2><p>{article.excerpt}</p><span>READ ARTICLE <ArrowRight /></span></Link>)}</section></>;
 }
 
 export function ArticlePage({ slug }: { slug: string }) {
   const article = articles.find((a) => a.slug === slug);
   if (!article) return <PageHero eyebrow="NOT FOUND" title="This article is not available." copy="Return to the Period Edit to explore our current guides." />;
-  return <article className="article-page section"><Link to="/blog" className="text-link">Back to the Period Edit</Link><p className="eyebrow">{article.category}</p><h1>{article.title}</h1><p className="lead">{article.excerpt}</p><div className="article-art feature"><Droplets /></div><h2>A simple place to begin</h2><p>Period care is personal. Pay attention to your own flow, comfort and daily routine rather than looking for one universal answer.</p><h2>Choose what supports your day</h2><p>Different moments may call for different coverage. Consider how much you move, how long you will be away from home and what feels comfortable to you.</p><aside>This article offers general education only. Speak with a qualified healthcare professional about pain, unusual symptoms or personal health concerns.</aside></article>;
+  return <article className="article-page section"><Link to="/blog" className="text-link">Back to the Period Edit</Link><p className="eyebrow">{article.category}</p><h1>{article.title}</h1><p className="lead">{article.excerpt}</p><div className="article-art feature"><img src={article.image} alt={article.title} /></div><h2>A simple place to begin</h2><p>Period care is personal. Pay attention to your own flow, comfort and daily routine rather than looking for one universal answer.</p><h2>Choose what supports your day</h2><p>Different moments may call for different coverage. Consider how much you move, how long you will be away from home and what feels comfortable to you.</p><aside>This article offers general education only. Speak with a qualified healthcare professional about pain, unusual symptoms or personal health concerns.</aside></article>;
 }
 
 export function FaqPage() {
@@ -268,6 +268,7 @@ export function ErrorStatePage({ type = "404" }: { type?: string }) {
 export function PageHero({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
   return <section className="page-hero"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p>{copy}</p></section>;
 }
+
 
 
 

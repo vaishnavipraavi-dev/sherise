@@ -229,3 +229,7 @@ footer{background:linear-gradient(135deg,var(--accent),#1e2b74)}
 .editorial-art:has(img):before,.editorial-art:has(img):after{display:none}
 .editorial-art:has(img) span{z-index:2;right:8%;top:8%;color:var(--coral);text-shadow:0 2px 12px rgba(255,255,255,.9)}
 
+
+.article-art img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.article-art.feature{height:min(560px,62vw);background:#fff}
+.article-art.feature img{object-fit:contain;background:#fff}
