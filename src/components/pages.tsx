@@ -58,9 +58,10 @@ export function Benefits() {
 
 export function PurposeSection() {
   const craftedForWomenImage = "https://i.pinimg.com/736x/09/f9/49/09f9498aa9df38b209a5a6ec3fcbafb6.jpg";
+  const kindToSkinImage = "https://i.pinimg.com/236x/50/c0/5d/50c05d902e34af8236db67fcdb023987.jpg";
   const data = [
     [Heart, "Crafted for women", "Comfort-focused period care made for everyday confidence.", craftedForWomenImage, "purpose-women"],
-    [Feather, "Kind to skin", "Soft essentials designed to feel gentle through busy days and restful nights.", productImageFor("sherise-sanitary-pads"), "purpose-skin"],
+    [Feather, "Kind to skin", "Soft essentials designed to feel gentle through busy days and restful nights.", kindToSkinImage, "purpose-skin"],
     [Leaf, "Kind to planet", "Thoughtful care with a cleaner, calmer visual story for modern routines.", productImageFor("sherise-single-pack"), "purpose-planet"],
   ] as const;
   return <section className="purpose section"><div className="section-heading"><p className="eyebrow">SHERISE PROMISE</p><h2>Made with a Purpose</h2><p>Period care that feels soft, looks premium and keeps real women at the center.</p></div><div className="purpose-grid">{data.map(([Icon, title, copy, image, tone]) => <article className={tone} key={title}><div className="purpose-art"><Icon /><img src={image} alt={title} /></div><h3>{title}</h3><p>{copy}</p></article>)}</div></section>;
@@ -265,6 +266,7 @@ export function ErrorStatePage({ type = "404" }: { type?: string }) {
 export function PageHero({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
   return <section className="page-hero"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p>{copy}</p></section>;
 }
+
 
 
 
