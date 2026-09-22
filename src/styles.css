@@ -236,3 +236,9 @@ footer{background:linear-gradient(135deg,var(--accent),#1e2b74)}
 
 .shop-section{padding-top:48px}
 @media(max-width:700px){.shop-section{padding-top:34px}.page-hero{padding-bottom:42px}}
+
+.image-hero{grid-template-columns:minmax(0,720px);background:linear-gradient(90deg,rgba(255,255,255,.90) 0 42%,rgba(255,248,248,.72) 68%,rgba(255,240,243,.42) 100%),var(--hero-image) center right/cover no-repeat!important;min-height:calc(100vh - 106px)}
+.image-hero:before{background:linear-gradient(90deg,rgba(255,255,255,.18),rgba(255,255,255,0));}
+.image-hero .hero-copy{padding:28px 0;text-shadow:0 2px 18px rgba(255,255,255,.72)}
+@media(max-width:700px){.image-hero{background:linear-gradient(180deg,rgba(255,255,255,.92) 0 48%,rgba(255,240,243,.55) 100%),var(--hero-image) center/cover no-repeat!important;min-height:620px;justify-content:center}.image-hero .hero-copy{padding-top:30px}}
+

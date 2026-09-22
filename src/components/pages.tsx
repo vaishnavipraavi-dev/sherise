@@ -1,4 +1,4 @@
-import { useMemo, useState, type FormEvent, type ReactNode } from "react";
+import { useMemo, useState, type CSSProperties, type FormEvent, type ReactNode } from "react";
 import { Link, useNavigate } from "@/lib/router";
 import {
   ArrowRight,
@@ -24,6 +24,7 @@ import productImage from "@/assets/p2.png";
 import productSetImage from "@/assets/p1.png";
 import pouchImage from "@/assets/p3.png";
 const slowMorningImage = "https://i.pinimg.com/1200x/ba/fa/db/bafadb9cf9a0942c8fb4e6464f3df854.jpg";
+const homeHeroImage = "https://i.pinimg.com/1200x/8e/2d/c4/8e2dc457609daf668649b48c8ecf8208.jpg";
 import { articles, cartAmount, createOrderId, ecommerceConfig, formatMoney, product, productById, products } from "@/data/site";
 import { ButtonLink, EmptyBag, ProductVisual, QuantityAdd, QuantityStepper, productImageFor, useStore } from "./store";
 
@@ -36,7 +37,7 @@ const trustItems = [
 
 export function HomePage() {
   return <>
-    <section className="hero"><div className="hero-copy"><p className="badge">PERIOD CARE, MADE FOR YOU</p><h1>Rise Above<br /><em>Period Discomfort.</em></h1><p>{product.description}</p><div className="hero-actions"><ButtonLink to="/shop">SHOP NOW <ArrowRight /></ButtonLink><ButtonLink to="/why-sherise" pale>WHY SHERISE?</ButtonLink></div></div><ProductVisual /></section>
+    <section className="hero image-hero" style={{ "--hero-image": `url(${homeHeroImage})` } as CSSProperties}><div className="hero-copy"><p className="badge">PERIOD CARE, MADE FOR YOU</p><h1>Rise Above<br /><em>Period Discomfort.</em></h1><p>{product.description}</p><div className="hero-actions"><ButtonLink to="/shop">SHOP NOW <ArrowRight /></ButtonLink><ButtonLink to="/why-sherise" pale>WHY SHERISE?</ButtonLink></div></div></section>
     <TrustStrip />
     <section className="product-show section"><div className="section-heading"><p className="eyebrow">ONE ESSENTIAL. THOUGHTFULLY MADE.</p><h2>Meet Your Period-Day Essential</h2></div><div className="showcase"><ProductVisual compact variant="set" /><div className="product-copy"><div className="badge-row"><span>COMFORT PICK</span><span>MEDIUM FLOW</span></div><h2>{product.name}</h2><p>{product.description}</p><div className="facts">{product.facts.map((x) => <span key={x}>{x}</span>)}</div><p className="price">{formatMoney(product.price)} <small>Retail pricing is configurable</small></p><QuantityAdd /><ButtonLink to="/product/sherise-sanitary-pads" pale>VIEW PRODUCT DETAILS</ButtonLink></div></div></section>
     <Benefits />
@@ -268,6 +269,9 @@ export function ErrorStatePage({ type = "404" }: { type?: string }) {
 export function PageHero({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
   return <section className="page-hero"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p>{copy}</p></section>;
 }
+
+
+
 
 
 
