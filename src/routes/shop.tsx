@@ -1,3 +1,0 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ShopPage } from "@/components/pages";
-export const Route = createFileRoute("/shop")({ head:()=>({meta:[{title:"Shop SheRise | Period Care Made for You"},{name:"description",content:"Shop SheRise sanitary pads and discover thoughtful period care designed for everyday confidence."},{property:"og:title",content:"Shop SheRise | Period Care Made for You"},{property:"og:description",content:"Shop SheRise sanitary pads and discover thoughtful period care designed for everyday confidence."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/"}]}), component:ShopPage });

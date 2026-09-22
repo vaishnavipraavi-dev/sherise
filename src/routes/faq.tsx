@@ -1,3 +1,0 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { FaqPage } from "@/components/pages";
-export const Route = createFileRoute("/faq")({ head:()=>({meta:[{title:"FAQs | SheRise Help"},{name:"description",content:"Find answers about SheRise products, ordering, shipping, payments, returns and period care."},{property:"og:title",content:"FAQs | SheRise Help"},{property:"og:description",content:"Find answers about SheRise products, ordering, shipping, payments, returns and period care."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/faq"}]}), component:FaqPage });

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "@/lib/router";
 import {
   ArrowRight,
   Heart,
@@ -298,3 +298,4 @@ export function productImageFor(productId: string) {
 export function EmptyBag({ compact = false }: { compact?: boolean }) {
   return <div className={`empty-cart ${compact ? "compact" : ""}`}><ShoppingBag /><h2>Your bag feels a little light.</h2><p>Let's add some comfort.</p><ButtonLink to="/shop">SHOP NOW</ButtonLink></div>;
 }
+
